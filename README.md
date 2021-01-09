@@ -16,3 +16,4 @@ If done properly, the page should do all of its specified functions and allow ot
 
 https://github.com/fongvang09/Quiz-Code/settings
 
+https://fongvang09.github.io/Quiz-Code/
