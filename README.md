@@ -10,7 +10,7 @@ If done properly, the page should do all of its specified functions and allow ot
 
 ![mainpage](ssgamepic.JPG)
 
-![]()
+![multiplechoicepage](startmistSS.JPG)
 
 ## Link
 
