@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Game</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+</head>
+
+<body class="bgpic">
+    <header>
+        <div class="wrapper">
+            <h1>Guessing Game</h1>
+        </div>
+        <br>
+    </header>
+    <div class="cardInstruction">
+        <p>INSTRUCTIONS:        
+            You are faced with 4 pedestals. <span class="yellow">Each pedestal holds a sign</span>.
+            <span class="yellow">3 signs share a characteristic</span> that the last doesn’t have. <span class="yellow">You must select the odd one out</span>.
+            <br>The characteristics are either:
+            <br>1. Circled or not
+            <br>2. Shape (Leaf or Flower)
+            <br>3. Filling (Empty or Filled)</p>
+            <img src="./ssmistgame.JPG" class="ssimg" alt="example">
+    </div>
+    <button class="start-button" id="myBtn">START</button>
+    <div class="minigameModal">
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>CLICK THE ODD ONE OUT</h2>
+                <ul id="imageClick">
+                    <li><a><img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafEmpty.png" alt="LeafEmpty"></li>
+                    <li><a><img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafFull.png" alt="LeafFull"></li>
+                    <li><a><img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerEmpty.png" alt="CircledFlowerEmpty"></li>
+                    <li><a><img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerFull.png" alt="FlowerFull"></li>
+                </ul>
+                <div class="text-color"><span class="timer-count">60</span>&nbsp; seconds remaining</div>
+            </div>
+        </div>
+
+        <!-- https://mythictrap.com/dungeons/mistsOfTirnaScithe/mistcaller/1 -->
+        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafEmpty.png" class="invisible" alt="LeafEmpty">
+        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafFull.png" class="invisible" alt="LeafFull">
+        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerEmpty.png" class="invisible" alt="FlowerEmpty">
+        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerFull.png" class="invisible" alt="FlowerFull">
+        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerEmpty.png" class="invisible" alt="CircledFlowerEmpty">
+        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerFull.png" class="invisible" alt="CircledFlowerFull">
+        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledLeafEmpty.png" class="invisible" alt="CircledLeafEmpty">
+        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledLeafFull.png" class="invisible" alt="CircledLeafFull">
+    </div>
+    <div class="card">
+        <div>
+            <h3>Wins: <span class="win">0 </span></h3>
+            <h3>Losses: <span class="lose">0 </span></h3>
+        </div>
+        <div class="timer-text">
+            <!-- <div><span class="timer-count">60</span>&nbsp; seconds remaining</div> -->
+            <div class="word-blanks"></div>
+            </div>
+            <button class="reset-button">RESET SCORE</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
