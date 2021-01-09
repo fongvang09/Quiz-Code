@@ -18,6 +18,7 @@ https://github.com/fongvang09/Quiz-Code/settings
 
 https://fongvang09.github.io/Quiz-Code/
 
-Below is how I wanted it to function but due to lack of time and skills..... And then add timer etc
+Below is how I wanted it to function but due to lack of time and skills..... And then add timer etc.
+Scroll down to "Click here to practice" to begin on the link.
 
 https://mythictrap.com/dungeons/mistsOfTirnaScithe/mistcaller/1
