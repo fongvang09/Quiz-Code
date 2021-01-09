@@ -14,3 +14,5 @@ If done properly, the page should do all of its specified functions and allow ot
 
 ## Link
 
+https://github.com/fongvang09/Quiz-Code/settings
+
