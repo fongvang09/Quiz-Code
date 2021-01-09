@@ -8,7 +8,7 @@ If done properly, the page should do all of its specified functions and allow ot
 
 ## Screenshots
 
-![]()
+![mainpage](ssgamepic.JPG)
 
 ![]()
 
