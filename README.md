@@ -1,4 +1,4 @@
-# Quiz-Code
+# Quiz-Code [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project is about creating a quiz that allows the person to have select one of the multiple answers presented to them. If they press on the start button, it'll show four images that looks similar but one of them is different. By selecting the odd one out, which is the correct answer, the player will then be able to move onto the next multiple choice that presents them yet another randomized set of images.
 
