@@ -60,8 +60,8 @@
 }
 
 img {
-    width: 50%;
-    height: 50%;
+    width: 100px;
+    /* height: 50%; */
 }
 
 h2 {
@@ -196,21 +196,30 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: transparent;
-    align-content: center;
+    /* align-content: center; */
+    margin-right: auto;
+    margin-left: auto;
 }
 
 li {
-    float: left;
-    padding: 50px;
+    /* float: left; */
+    /* padding: 50px; */
+    margin-right: auto;
+    margin-left: auto;
 }
   
 li a {
-    display: block;
-    color: white;
-    padding: auto;
-    text-decoration: none;
+    /* display: block; */
+    /* color: white; */
+    /* padding: auto; */
+    /* text-decoration: none; */
 }
   
 li a:hover {
     background-color: transparent;
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
 }
