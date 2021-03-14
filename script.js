@@ -1,62 +1,33 @@
-var startBtn = document.querySelector(".start-button");
-// console.log(startBtn);
-var timerDisplay = document.querySelector(".timer-count");
-var wordDisplay = document.querySelector(".word-blanks");
-var btnPlayAgain = document.querySelector(".reset-button");
-var set = document.querySelector("#questionSet");
-var result = document.querySelector("#result");
+var startBtn = document.getElementById("start");
+var timerEl = document.getElementById("timer-count");
+var wordDisplay = document.getElementById("word-blanks");
+var btnPlayAgain = document.getElementById("reset-button");
+var questionsEl = document.getElementById("questions");
+var result = document.getElementById("result");
+var choicesEl = document.getElementById("choices");
+
 var wins = 0;
 var losses = 0;
 var isWin = false;
 var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close")[0]; // [0] is needed to close modal when clicking "x"
+var currentQuestionIndex = 0;
 
-var chosenImages = "";
 var imageArray = ["https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafEmpty.png", "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafFull.png", "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerEmpty.png",
   "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerFull.png", "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerEmpty.png", "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerFull.png",
   "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledLeafEmpty.png", "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledLeafFull.png"];
 
-// var rand = imgArray[math.floor(math.random * imgArray.length)];
-
-btn.onclick = function () {
-  modal.style.display = "block";
-}
-// if (startBtn) {
-//   startBtn.addEventListener("click"), handleStartClick;
-// }
-
-span.onclick = function () {
-  modal.style.display = "none";
-}
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-function handleStartClick(e) {
-  startPrompt.style.display = "none";
-  questionContainer.style.display = "block";
-  timer();
-  renderImages
-}
-
-function startGame () {
-  isWin = false;
-  timerCount = 60;
-  startButton.disabled = true;
-  renderImages()
-  startTimer()
-}
-
-
 // Quiz game question set
 var questions = [
   {
+    title: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts"
+  },
+  {
     title: "Odd one out",
     choices: ["https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafEmpty.png", "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafFull.png", "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerEmpty.png", "https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerFull.png"],
-    correctAns: "two",
+    correctAns: 2,
   },
   {
     title: "Odd one out",
@@ -75,14 +46,79 @@ var questions = [
   },
 
 ]
-var currentQuestion = 0;
+
+// user clicks button to submit initials
+// submitBtn.onclick = saveHighscore;
+
+// user clicks button to start quiz
+startBtn.onclick = startQuiz;
+
+// initialsEl.onkeyup = checkForEnter;
+
+
+// opens modal when user clicks on the start button
+startBtn.onclick = function () {
+  modal.style.display = "block";
+}
+// to close modal when you press "x" button
+span.onclick = function () {
+  modal.style.display = "none";
+}
+// another way to close modal when pressed outside of content
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function startQuiz () {
+  // un-hide questions section
+  var startScreenEl = document.getElementById("start-screen");
+  startScreenEl.setAttribute("class", "hide");
+  // questionsEl.removeAttribute("class");
+
+  // start timer
+  timerId = setInterval(clockTick, 1000);
+
+  // show starting time
+  timerEl.textContent = time;
+
+  getQuestion();
+}
+
+function getQuestion() {
+  // get current question object from array
+  var currentQuestion = questions[currentQuestionIndex];
+
+  // update title with current question
+  var titleEl = document.getElementById("question-title");
+  titleEl.textContent = currentQuestion.title;
+
+  // clear out any old question choices
+  choicesEl.innerHTML = "";
+
+  // loop over choices
+  currentQuestion.choices.forEach(function(choice, i) {
+    // create new button for each choice
+    var choiceNode = document.createElement("button");
+    choiceNode.setAttribute("class", "choice");
+    choiceNode.setAttribute("value", choice);
+
+    choiceNode.textContent = i + 1 + ". " + choice;
+
+    // attach click event listener to each choice
+    choiceNode.onclick = questionClick;
+
+    // display on the page
+    choicesEl.appendChild(choiceNode);
+  });
+}
 
 function renderImages () {
   console.log("In render Images function");
-  // chosenImages = imageArray[math.floor(math.random() * imageArray.length) - 5];
   const currentImage = questions[questionIndex];
   // what question are we curerntly displaying 
-  set.textContent = currentImage.text
+  questionsEl.textContent = currentImage.text
   // create new HTML elements to display the question data (question title, question choices)
   // Create element
   var image = document.createElement("img");
@@ -92,7 +128,7 @@ function renderImages () {
   image.setAttribute("src", questions[currentQuestion].choices[0])
   image.setAttribute("data-selection", i)
   // Add Element to DOM
-  set.appendChild(image);
+  questionsEl.appendChild(image);
 }
 
 for (let i = 0; i < array.length; i++) {
@@ -106,30 +142,13 @@ startBtn.addEventListener("click", function (e) {
   startBtn.disabled = true;
   var timerId = setInterval(function () {
     timerCount--;
-    timerDisplay.textContent = timerCount;
+    timerEl.textContent = timerCount;
     if (timerCount === 0) {
       wordDisplay.textContent = "GAME OVER!";
       clearInterval(timerId);
     }
   }, 1000);
 });
-
-
-// if (typeof (Storage) !== "undefined") {
-//   localStorage.setItem("localstorage", "localstorage");
-//   document.getElementById("result").innerHTML = localStorage.getItem("localstorage");
-// } else {
-//   document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-// }
-
-
-// function getRandomImage(imgAr, path) {
-//   path = path || "images/";
-//   var num = math.floor(math.random() * imgAr.length);
-//   var img = imgAr[num];
-//   var imgStr = "<img src='" + path + img + "'alt = ''></img>";
-//   document.write(imgStr); document.close();
-// }
 
 function timer() {
   timerEl.style.display = "block";

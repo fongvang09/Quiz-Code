@@ -94,7 +94,7 @@ h2 {
     margin-top: 30px;
 }
 
-.start-button {
+#start {
     display: table;
     margin: 48px auto;
     background: #b37923;
@@ -139,6 +139,10 @@ h2 {
 }
 
 .invisible {
+    display: none;
+}
+
+.hide {
     display: none;
 }
 
@@ -222,4 +226,8 @@ li a:hover {
 .row {
     margin-left: auto;
     margin-right: auto;
+}
+
+.choices button {
+    display: block;
 }
