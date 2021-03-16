@@ -1,19 +1,17 @@
-# Quiz-Code [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# pokemon-quiz [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project is about creating a quiz that allows the person to have select one of the multiple answers presented to them. If they press on the start button, it'll show four images that looks similar but one of them is different. By selecting the odd one out, which is the correct answer, the player will then be able to move onto the next multiple choice that presents them yet another randomized set of images.
+## Task
 
-## Purpose of this project
+The purpose of this project is to present a multiple choice answer for the user to choose. They are given an X amount of time and if guessed incorrectly, they'll be penalized with a time reduction until they no longer have any time left. Game ends and then they are asked to put their names down on the highscores page.
 
-If done properly, the page should do all of its specified functions and allow other users to effortlessly navigate through the page. This project demonstrates that they should know how to use Javascript and to add event functions etc so that players can interact with the page and then store their scores onto their local storage if prompted to do so.
+Ready for the challenge? Scroll down and click on the deployed link to test out your knowledge on Pokemon!
 
-## Screenshots
+## Screenshot
 
-![mainpage](ssgamepic.JPG)
+![pokemon quiz screenshot](assets/pokequiz-ss.JPG)
 
-![multiplechoicepage](startmistSS.JPG)
+## Links
 
-## Link
+GitHub: https://github.com/fongvang09/pokemon-quiz
 
-https://github.com/fongvang09/Quiz-Code/settings
-
-https://fongvang09.github.io/Quiz-Code/
+Deployed: https://fongvang09.github.io/Quiz-Code/

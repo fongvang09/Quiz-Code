@@ -1,79 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Game</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Game</title>
+  <script src="./assets/js/logic.js"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
 </head>
 
 <body class="bgpic">
-    <header>
-        <div class="wrapper">
-            <h1>Guessing Game</h1>
-        </div>
-        <br>
-    </header>
-    <div class="cardInstruction">
-        <p>INSTRUCTIONS:        
-            You are faced with 4 pedestals. <span class="yellow">Each pedestal holds a sign</span>.
-            <span class="yellow">3 signs share a characteristic</span> that the last doesn’t have. <span class="yellow">You must select the odd one out</span>.
-            <br>The characteristics are either:
-            <br>1. Circled or not
-            <br>2. Shape (Leaf or Flower)
-            <br>3. Filling (Empty or Filled)</p>
-            <img src="./ssmistgame.JPG" class="ssimg" alt="example">
+  <header>
+    <div class="wrapper">
+      <h1>Pokemon Knowledge Test</h1>
     </div>
-    <button id="start" id="start-screen">START</button>
-    <div class="minigameModal">
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>CLICK THE ODD ONE OUT</h2>
-                <div class="row">
-                    <ul id="imageClick">
-                        <div class="col-md-12" id="questions" class="hide">
-
-
-                            <h2 id="question-title"></h2>
-                            <div id="choices" class="choices"></div>
-
-                            <!-- <li><id getRandomImage></id><img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafEmpty.png"></li> -->
-                            <!-- <li class="col-md-3"><a><img data-num="1" src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafEmpty.png" alt="LeafEmpty"></li>
-                            <li class="col-md-3"><a><img data-num="2" src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafFull.png" alt="LeafFull"></li>
-                            <li class="col-md-3"><a><img data-num="3" src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerEmpty.png" alt="CircledFlowerEmpty"></li>
-                            <li class="col-md-3"><a><img data-num="4" src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerFull.png" alt="FlowerFull"></li> -->
-                        </div>
-                    </ul>
-                </div>
-                <div class="text-color"><span class="timer-count">60</span>&nbsp; seconds remaining</div>
-            </div>
-        </div>
-        <!-- <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafEmpty.png" class="invisible" alt="LeafEmpty">
-        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/LeafFull.png" class="invisible" alt="LeafFull">
-        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerEmpty.png" class="invisible" alt="FlowerEmpty">
-        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/FlowerFull.png" class="invisible" alt="FlowerFull">
-        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerEmpty.png" class="invisible" alt="CircledFlowerEmpty">
-        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledFlowerFull.png" class="invisible" alt="CircledFlowerFull">
-        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledLeafEmpty.png" class="invisible" alt="CircledLeafEmpty">
-        <img src="https://assets.mythictrap.com/mistsOfTirnaScithe/miniGame/CircledLeafFull.png" class="invisible" alt="CircledLeafFull"> -->
+    <br>
+  </header>
+  
+  <div class="cardInstruction">
+    <p>Test out your Pokemon knowledge with this simple quiz! Beware of the timer! You are given 60 seconds after you start the quiz. For every wrong answer you get, you'll be deducted 10 seconds off from your current timer until time's up.
+    </p>
+  </div>
+  <div class="wrapper">
+    <div id="start-screen" class="start">
+      <h1>Coding Quiz Challenge</h1>
+      <p>
+        Try to answer the following code-related questions within the time
+        limit. These questions revolve around the older generation of Pokemon and not the most recent. Good luck!
+      </p>
+      <button id="start">Start Quiz</button>
     </div>
-    <div class="card">
-        <div>
-            <div id="result">
-                <h3>Wins: <span class="win">0 </span></h3>
-                <h3>Losses: <span class="lose">0 </span></h3>
-            </div>
-        </div>
-        <div class="timer-text">
-            <!-- <div><span class="timer-count">60</span>&nbsp; seconds remaining</div> -->
-            <div class="word-blanks"></div>
-            </div>
-            <button class="reset-button">RESET SCORE</button>
-        </div>
+
+    <div id="questions" class="hide" align="center">
+      <h2 id="question-title"></h2>
+      <div id="choices" class="choices"></div>
+
     </div>
-    <script src="script.js"></script>
+    <div class="timer">Time: <span id="time">60</span></div>
+
+    <div id="end-screen" class="hide">
+      <h2>GAME OVER!</h2>
+      <p>Your final score is <span id="final-score"></span>.</p>
+      <p>
+        Enter your name: <input type="text" id="initials"/>
+        <button id="submit">Submit</button>
+      </p>
+    </div>
+
+    <div id="feedback" class="feedback hide"></div>
+  </div>
+  <script src="./assets/js/questions.js"></script>
+  <script src="./assets/js/logic.js"></script>
 </body>
 
 </html>
